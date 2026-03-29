@@ -1,0 +1,129 @@
+{
+  "theme_and_archetype": {
+    "theme": "dark",
+    "archetype": "Archetype 2: Performance Pro / Command Center",
+    "description": "Dark mode modern DevOps dashboard emphasizing tactical precision, high-contrast text, and 'command-center' functionality. Uses deep obsidian bases with highly visible electric blue and status colors."
+  },
+  "typography": {
+    "fonts_to_install": "Chivo, IBM Plex Sans, JetBrains Mono",
+    "headings": {
+      "font_family": "Chivo, sans-serif",
+      "font_weight": "font-bold",
+      "tracking": "tracking-tight",
+      "sizes": {
+        "h1": "text-4xl sm:text-5xl",
+        "h2": "text-2xl sm:text-3xl",
+        "h3": "text-xl sm:text-2xl"
+      }
+    },
+    "body": {
+      "font_family": "'IBM Plex Sans', sans-serif",
+      "sizes": {
+        "base": "text-sm md:text-base",
+        "small": "text-xs"
+      }
+    },
+    "data_and_logs": {
+      "font_family": "'JetBrains Mono', monospace",
+      "sizes": {
+        "base": "text-xs md:text-sm"
+      },
+      "usage": "CRITICAL: Must be used for live logs, metric numbers, code snippets, Job IDs, and table data."
+    }
+  },
+  "colors": {
+    "background": {
+      "main": "#09090B",
+      "surface": "#121214",
+      "surface_elevated": "#1A1A1E"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "#A1A1AA",
+      "muted": "#71717A"
+    },
+    "primary": {
+      "DEFAULT": "#007AFF",
+      "hover": "#3395FF"
+    },
+    "status": {
+      "success": "#34C759",
+      "warning": "#FFD60A",
+      "error": "#FF3B30",
+      "info": "#007AFF"
+    },
+    "border": {
+      "default": "#27272A",
+      "focus": "#007AFF"
+    },
+    "css_vars_override": {
+      "--background": "240 10% 4%",
+      "--foreground": "0 0% 100%",
+      "--card": "240 5% 8%",
+      "--card-foreground": "0 0% 100%",
+      "--popover": "240 5% 8%",
+      "--popover-foreground": "0 0% 100%",
+      "--primary": "210 100% 50%",
+      "--primary-foreground": "0 0% 100%",
+      "--secondary": "240 4% 16%",
+      "--secondary-foreground": "0 0% 100%",
+      "--muted": "240 4% 16%",
+      "--muted-foreground": "240 5% 65%",
+      "--accent": "240 4% 16%",
+      "--accent-foreground": "0 0% 100%",
+      "--destructive": "3 100% 59%",
+      "--destructive-foreground": "0 0% 100%",
+      "--border": "240 4% 16%",
+      "--input": "240 4% 16%",
+      "--ring": "210 100% 50%",
+      "--radius": "0.125rem"
+    }
+  },
+  "layout_and_spacing": {
+    "grid_system": "MODE B: THE CONTROL ROOM GRID",
+    "spacing_scale": "Tight padding inside widgets (`p-4` or `p-6`). Wide gaps between sections (`gap-4` or `gap-6`).",
+    "radius": "Use `rounded-none` or at most `rounded-sm` (2px) for a sharp, technical look. Do not use soft rounded corners.",
+    "borders": "Expose the skeleton. Use `border border-border` on all cards and panels. Add `border-l-2` with status colors (green/red) for status indicators on metric cards."
+  },
+  "components_strategy": {
+    "cards": "Go cardless or use flat rectangular shapes with a 1px solid border (`border-border`). No soft shadows. Use `shadow-none`.",
+    "buttons": "Flat, sharp edges. Primary actions use the Volt Blue (`#007AFF`) background. Secondary actions use `bg-secondary` with `border-border`.",
+    "tables": "Dense rows. `text-sm` for data. Highlight the 'Status' column with appropriate status color text. Use Shadcn Table. No hover background on rows unless strictly necessary.",
+    "logs_panel": "Terminal look. Background `#050505` or `#000000`. Monospace font (`JetBrains Mono`). Highlight INFO in blue, ERROR in red, WARN in yellow. Use a strict `border border-border` wrapper.",
+    "toast": "Use Sonner. Dark background, sharp border, colored left edge based on success/error. Minimal animation."
+  },
+  "motion_and_interaction": {
+    "hover": "Subtle background lightening (`hover:bg-zinc-800` or `hover:bg-secondary/80`). Text color MUST remain explicitly defined on hover.",
+    "focus": "Sharp 2px ring: `focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none`.",
+    "websocket_updates": "When a row or metric updates via WS, flash the element's background briefly (e.g., `bg-zinc-800` transitioning to `bg-transparent`) to indicate data change."
+  },
+  "icons_and_assets": {
+    "icons_library": "lucide-react",
+    "icons_usage": "Use stroke-width 1.5 or 2. Keep them consistent in size (`w-4 h-4` for inline, `w-5 h-5` for menu items).",
+    "images": [
+      {
+        "category": "abstract_background",
+        "url": "https://images.unsplash.com/photo-1760978632114-0939f0d60045?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMGRhcmslMjB0ZWNobm9sb2d5JTIwdGV4dHVyZXxlbnwwfHx8fDE3NzQ3OTMyMDh8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Dark metallic abstract pattern. Use at 5-10% opacity for the main header background or as a subtle overlay on empty state containers."
+      },
+      {
+        "category": "empty_state",
+        "url": "https://images.pexels.com/photos/7562089/pexels-photo-7562089.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Glowing circuit board texture. Use at 20% opacity and grayscale inside the empty state of the logs panel or when no jobs are selected."
+      }
+    ]
+  },
+  "accessibility_and_testing": {
+    "testing_attributes": "All interactive and key informational elements MUST include `data-testid` attribute. Convention: kebab-case, role-based. e.g., `data-testid='job-retry-button'`.",
+    "contrast": "Ensure text contrast against dark backgrounds meets APCA standards. Use text shadow over images if necessary."
+  },
+  "instructions_to_main_agent": [
+    "CRITICAL: Set the dashboard entirely to Dark Mode. Do not implement a light mode toggle unless explicitly needed later. Overwrite the default `.dark` variables in index.css with the values provided in `css_vars_override`.",
+    "CRITICAL: Apply `JetBrains Mono` for ALL data tables, metric numbers, log outputs, and job identifiers.",
+    "Ensure the dashboard uses a dense, 'Control Room' grid layout with `border-collapse` style lines or 1px subtle borders between panels. No gaps or soft edges.",
+    "For the Live Logs Panel, implement a 'Retro-Futurism' terminal look: deep black background (`bg-black`), monospace font, and colored status logs.",
+    "Use standard `lucide-react` for system icons. Add standard `data-testid` tags to all filter inputs, action buttons, and table rows.",
+    "Keep border-radius strictly limited to `rounded-sm` (2px) or `rounded-none`. No soft, bubbly edges anywhere.",
+    "Use the abstract texture URL provided for the header background with a very low opacity (`opacity-[0.03]` or `opacity-[0.05]`) with `mix-blend-overlay` to give a subtle high-tech feel without distracting from the data."
+  ]
+}
