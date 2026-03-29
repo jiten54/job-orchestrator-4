@@ -151,7 +151,7 @@ export default function Dashboard() {
     <div data-testid="dashboard" className="min-h-screen bg-[#09090B]">
       <Toaster
         theme="dark"
-        position="top-right"
+        position="bottom-right"
         toastOptions={{
           className: 'border border-border rounded-sm bg-[#121214] text-white',
         }}
